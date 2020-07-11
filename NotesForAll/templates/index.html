@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>DesaBoiDB</title>
+  </head>
+  <body>
+<div class="container">
+        <!-- As a heading -->
+    <br> 
+    <div class="col-sm-10">
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand">DesaBoi</a>
+            <form class="form-inline" method="GET">
+              <input class="form-control mr-sm-4" type="search" name="notes_code" placeholder="type course-lectureNo." aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </nav>
+        <br>
+
+        {% for query in query_sets %}
+        <p><a href="{% url 'sms' %}">{{ query.filename }}</a></p>
+        {% endfor %}
+
+    </div>
+</div>
+
+</body>
